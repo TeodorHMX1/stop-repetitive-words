@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2020. Teodor G. (https://www.github.com/TeodorHMX1).
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~       http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <RelativeLayout
+        android:id="@+id/rlToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/background_toolbar"
+        android:elevation="5dp">
+
+        <com.zeoflow.material.elements.imageview.ShapeableImageView
+            android:id="@+id/simBack"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:padding="6dp"
+            android:tint="@color/colorTextLvl2"
+            app:srcCompat="@drawable/ic_back_arrow" />
+
+        <com.zeoflow.material.elements.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/simBack"
+            android:gravity="start|center_vertical"
+            android:text="Manage Sequences"
+            android:textColor="@color/colorTextLvl2"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="66dp">
+
+        <com.zeoflow.material.elements.textfield.TextInputLayout
+            style="@style/MaterialElements.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:hint="New sequence to detect"
+            android:theme="@style/Theme.OutlinedBox.Dense">
+
+            <com.zeoflow.material.elements.textfield.TextInputEditText
+                android:id="@+id/edtSequence"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.zeoflow.material.elements.textfield.TextInputLayout>
+
+        <com.zeoflow.material.elements.button.MaterialButton
+            android:id="@+id/btManageSequences"
+            style="@style/MaterialElements.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:text="Add Sequence"
+            android:textAllCaps="false"
+            android:textColor="@color/coloredAccent"
+            app:strokeColor="@color/coloredAccent"
+            app:strokeWidth="2dp"
+            app:textAllCaps="false" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSequences"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
